@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <title>Account List</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+            h1 { color: #333; }
+            ul { list-style-type: none; padding: 0; }
+            li { margin-bottom: 10px; padding: 10px; background-color: #f0f0f0; border-radius: 5px; }
+        </style>
+    </head>
+</head>
+<body>
+    <h1>Accounts</h1>
+    {% if accounts %}
+        <ul>
+        {% for account in accounts %}
+            <li>{{ account.user.username }}'s account at {{ account.institution.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No accounts are available.</p>
+    {% endif %}
+</body>
+</html>
